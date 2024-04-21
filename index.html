@@ -1,6 +1,38 @@
 <!DOCTYPE HTML>
+
 <html>
 	<head>
+		<style>
+			* {
+			box-sizing: border-box;
+			}
+
+			.container {
+			max-width: 100%;
+			}
+
+			.one-half {
+			float: left;
+			width: 55%;
+			/* border: 1px dashed red; */
+			}
+
+			.other-half {
+			float: right;
+			width: 40%;
+			/* border: 1px dashed red; */
+			}
+
+			.other-half img  {
+			width: 95%;
+			}
+			.square {
+            background-color: #F2F3F7; /* Set background color of the square */
+			border-radius: 15px;
+			
+        }
+
+		</style>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Chitralekha Gupta</title>
@@ -67,11 +99,13 @@
 						<li><a href="#" data-nav-section="about">About</a></li>
 <!--						<li><a href="#" data-nav-section="services">Services</a></li>-->
 						<li><a href="#" data-nav-section="publications">Publications</a></li>
-						<li><a href="#" data-nav-section="news">News</a></li>
+						<!-- <li><a href="#" data-nav-section="news">News</a></li> -->
 <!--
 						<li><a href="#" data-nav-section="education">Education</a></li>
 						<li><a href="#" data-nav-section="experience">Work Experience</a></li>
+						
 -->
+						<li><a href="#" data-nav-section="ongoing projects">Ongoing Projects</a></li>
 						<li><a href="#" data-nav-section="demos">Demos</a></li>
 <!--
 						<li><a href="#" data-nav-section="activities">Other Activities</a></li>
@@ -81,9 +115,9 @@
 				</div>
 			</nav>
 
-			<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Website Template from <a href="https://colorlib.com" target="_blank">Colorlib</a>
+			<!-- <div class="colorlib-footer"> -->
+				<!-- <p><small>&copy; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Website Template from <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> </small></p>
 				<!-- <ul>
 					<li><a href="#"><i class="icon-facebook2"></i></a></li>
@@ -91,7 +125,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					<li><a href="#"><i class="icon-instagram"></i></a></li>
 					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
 				</ul> -->
-			</div>
+			<!-- </div> -->
 
 		</aside>
 
@@ -105,9 +139,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<div class="col-md-12">
 									<div class="about-desc">
 										<h2>About Me</h2>
-                                        I am a Senior Research Fellow at the National University of Singapore.
-<p>My research interests are neural audio synthesis, singing voice analysis and evaluation, applications of ASR in music such as lyrics alignment and transcription, music information retrieval, and applications of music in education and health therapy.</p>
-<p>I have also founded my company, <a href="https://musigpro.com/">MuSigPro</a> which is a music tech company that provides a singing competition platform with our AI-driven singing quality evaluation technology.</p>
+                                        I am a Senior Research Fellow at the School of Computing in the National University of Singapore. I am currently working in the Augmented Human Lab with A/Prof Suranga Nanayakkara on assistive technologies. In my previous post-doc position, I worked with A/Prof Lonce Wyse on audio generative models. In my first post-doc position with Prof Haizhou Li, I worked on applications of ASR in music.
+<p>My goal as a researcher is to build evidence-based technologies to improve people's lives. My research interests include designing generative models for creative and assistive applications, and music information retrieval.</p>
+<p>I have founded the company, <a href="https://musigpro.com/">MuSigPro</a> which is a music tech company that aims to provide solutions to bring the power of music closer to people. It has a singing competition platform with an AI-driven singing quality evaluation technology, that was designed during my PhD, and an automatic music-to-lyrics aligner that was designed during my first PostDoc.</p>
 <br><p><a href="https://chitralekha18.github.io/home/papers/CG_ResumeAug2023.pdf" target="_blank" class="btn btn-primary btn-learn"><b>Download CV</b><i class="icon-download4"></i></a> <a href="https://scholar.google.com/citations?user=NFi7pkcAAAAJ&hl=en" target="_blank" class="btn btn-primary btn-learn"><b>Google Scholar</b><i class="https://scholar.google.com/favicon.ico"></i></a> <a href="https://github.com/chitralekha18" target="_blank" class="btn btn-primary btn-learn"><b>Github</b><i class=""></i></a></p><br>
 
 									</div>
@@ -117,6 +151,43 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					</div>
 				</div>
 			</section>
+
+			<!-- <section class="colorlib-experience" data-section="news">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+						<h2>&emsp;&nbsp;&nbsp;News</h2>
+
+						</div>
+						</div>
+
+
+				<div class="colorlib-narrow-content"  style="height:150vh; overflow-y:auto;">
+					<div class="row">
+						<div class="col-md-12">
+							
+							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+								<div class="timeline-entry-inner">
+						<i class="icon-pen2"></i>&emsp;<b>April 2024:</b> Our paper titled <b>SonicVista: Towards Creating Awareness of Distant Scenes through Sonification</b> accepted in Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) 2024.<br>
+						<i class="icon-pen2"></i>&emsp;<b>April 2024:</b> Our paper titled <a href="https://arxiv.org/abs/2308.11859"><b>Example-Based Framework for Perceptually Guided Audio Texture Generation</b></a> accepted in IEEE/ACM TASLP 2024.<br>
+
+						<i class="icon-pen2"></i>&emsp;<b>March 2023:</b> <font color="red"> <strong>Promotion! </strong></font>🎉 I am happy to share that I got promoted to <b>Senior Research Fellow</b> position, School of Computing, NUS.<br>
+						<i class="icon-pen2"></i>&emsp;<b>July 2022:</b> My first field overview paper, titled <a href="https://ieeexplore.ieee.org/document/9829265"><b>Deep Learning Approaches in Topics of Singing Information Processing</b></a> is now published in IEEE/ACM Transactions on Audio, Speech, and Language Processing 2022. It was an enriching experience to collaborate with Dr. Masataka Goto and Prof. Haizhou Li for this paper.<br>
+					
+				</div>
+				</article>
+
+				</div>
+				</div>
+			
+			</section>
+
+ -->
+
+
+
+
+
+
             <!-- <section class="colorlib-services" data-section="publications"> -->
 				<section data-section="publications"></section>
 				<div class="row" >
@@ -127,12 +198,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 				<div class="colorlib-narrow-content"  style="height:200vh; overflow-y:auto;">
                     <ol  style="margin-left: 6px; margin-right: 5px" >
-						<h3>2023</h3>
+						<h3>2024</h3>
 						<li>
 							<div>
 								<span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span>SonicVista: Towards Creating Awareness of Distant Scenes through Sonification<br>
 								<strong>Chitralekha Gupta</strong>, Shreyas Sridhar, Denys Matthies, Christophe Jouffrais, and Suranga Nanayakkara<br>
-								<span style="font-style: italic;">IMWUT 2023 (under review).</span>
+								<span style="font-style: italic;">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) 2024.</span>
 								<br>
 								
 								</div>
@@ -141,25 +212,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<div>
 								<span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span><a href="https://arxiv.org/abs/2308.11859">Example-Based Framework for Perceptually Guided Audio Texture Generation</a><br>
 								Purnima Kamath, <strong>Chitralekha Gupta</strong>, Lonce Wyse, and Suranga Nanayakkara<br>
-								<span style="font-style: italic;">IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2023 (under review).</span>
+								<span style="font-style: italic;">IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2024.</span>
 								<br>
 								
 								</div>
 						</li>
 						<li>
 							<div>
-								<span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span><a href="https://arxiv.org/abs/2306.03381">VR.net: A Real-world Dataset for Virtual Reality Motion Sickness Research</a><br>
+								<span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span><a href="https://arxiv.org/abs/2306.03381">VR.net: A Real-world Dataset for Virtual Reality Motion Sickness Research</a> <font color="red"> <strong>- Best Paper Award 🏆</strong></font><br>
 								Elliot Wen, <strong>Chitralekha Gupta</strong>, Prasanth Sasikumar, Mark Billinghurst, James Wilmott, Emily Skow, Arindam Dey, and Suranga Nanayakkara<br>
-								<span style="font-style: italic;">IEEE VR, 2023 (under review).</span>
+								<span style="font-style: italic;">IEEE VR, 2024.</span>
 								<br>
 								
 								</div>
 						</li>
+						<br>
+						<h3>2023</h3>
 						<li>
 							<div>
-								<span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span>Can AI Models Summarize Your Diary Entries? Investigating Utility of Abstractive Summarization for Autobiographical Text<br>
+								<span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span><a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2286090">Can AI Models Summarize Your Diary Entries? Investigating Utility of Abstractive Summarization for Autobiographical Text</a><br>
 								<strong>Chitralekha Gupta*</strong>, Shamane Siriwardhana*, Tharindu Kaluarachchi, Vipula Dissanayake, Suveen Ellawela, and Suranga Nanayakkara<br>
-								<span style="font-style: italic;">accepted in International Journal of Human–Computer Interaction (IJHCI), 2023.</span>
+								<span style="font-style: italic;"> International Journal of Human–Computer Interaction (IJHCI), 2023.</span>
 								<br>
 								
 								</div>
@@ -388,9 +461,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					<h3>2017</h3>
                     <li>
 						<div>
-                            <span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span><a href="https://www.smcnus.org/wp-content/uploads/2013/09/WP-P2.5.pdf">Perceptual Evaluation of Singing Quality</a><font color="red"> <strong>(Best student paper award)</strong></font><br>
+                            <span style="font-size:15px; color:black;"><span _fck_bookmark="1" style="display: none;"> </span><span _fck_bookmark="1" style="display: none;">&nbsp;</span><a href="https://www.smcnus.org/wp-content/uploads/2013/09/WP-P2.5.pdf">Perceptual Evaluation of Singing Quality</a> <font color="red"> <strong>- Best Student Paper Award 🏆</strong></font><br>
 							 <strong>Chitralekha Gupta</strong>, Haizhou Li, and Ye Wang<br>
-							<span style="font-style: italic;">In Proceedings of Asia-Pacific Signal and Information Processing Association (APSIPA), Kuala Lumpur, Dec. 2017</span>
+							<span style="font-style: italic;">In Proceedings of Asia-Pacific Signal and Information Processing Association (APSIPA), Kuala Lumpur, Dec. 2017.</span>
 						    <br>
 						 
 							</div>
@@ -509,306 +582,70 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</section>
             
             
-           
-            <section class="colorlib-experience" data-section="news">
+			<section class="colorlib-experience" data-section="ongoing projects">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<h2>&emsp;&nbsp;&nbsp;News</h2>
-					</div>
-				</div>
+						<h2>&emsp;&nbsp;&nbsp;Ongoing Projects</h2>
+
+						</div>
+						</div>
+
+						<!-- <div class="square"> -->
 				<div class="colorlib-narrow-content"  style="height:150vh; overflow-y:auto;">
 					<div class="row">
 						<div class="col-md-12">
-				         <div class="timeline-centered">
+							<div class="square">
 							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="" class="blog-img">Promotion!</h2>
-					                  <p> I am happy to share that I got promoted to Senior Research Fellow position, School of Computing, NUS.</p>
-					               </div>
-					            </div>
-					         </article>
-							<!-- <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="" class="blog-img"><img src="https://github.com/ismir2022/ismir2022.github.io/blob/main/assets/images/ismir2022.png?raw=true" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a>ISMIR 2022 result</span></h2>
-					                  <p> Our paper titled <a href="">Parameter Sensitivity of Deep-Feature based Evaluation Metrics for Audio Textures</a> is accepted for publication at ISMIR 2022, to be held in Bengaluru India, in December this year.</p>
-					               </div>
-					            </div>
-					         </article> -->
-							 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2>Overview paper in IEEE/ACM Transactions</span></h2>
-					                  <p> My first field overview paper, titled <a href="https://ieeexplore.ieee.org/document/9829265">Deep Learning Approaches in Topics of Singing Information Processing</a> is now published in IEEE/ACM Transactions on Audio, Speech, and Language Processing 2022. It was an enriching experience to collaborate with Dr. Masataka Goto and Prof. Haizhou Li for this paper.</p>
-					               </div>
-					            </div>
-					         </article>
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="https://twitter.com/ieeeICASSP/status/1530106578887512064" class="blog-img"><img src="https://github.com/chitralekha18/home/blob/master/images/SPS_EF_MuSigPro.png?raw=true" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a>IEEE SPS Entrepreneurship Forum at ICASSP 2022</span></h2>
-					                  <p> <img src="https://github.com/chitralekha18/home/blob/master/images/MuSigPro.png?raw=true" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"><a href="https://musigpro.com/">MuSigPro</a> amongst <a href="https://twitter.com/ieeeICASSP/status/1530106578887512064">6 finalists</a> out of 20 teams in 5-min Pitching Competition of <a href="https://2022.ieeeicassp.org/entrepreneurship_forum.php">IEEE SPS Entrepreneurship Forum</a> at ICASSP 2022.</p>
-					               </div>
-					            </div>
-					         </article>
-							 <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="https://2022.ieeeicassp.org/" class="blog-img"><img src="https://2022.ieeeicassp.org/assets/ICASSP2022_logo-2.png" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="http://asru2019.org/wp/">Organizing ICASSP2022 at Singapore</a> <span>22-27 May 2022</span></h2>
-					                  <p>ICASSP 2022 is going to be a hybrid event this year, with the physical event being held at Singapore. I am serving as the local co-chair in the organizing committee. It is so nice to host a physical conference and meet researchers in-person after so long!!</p>
-					               </div>
-					            </div>
-					         </article>
-							 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="https://musigpro.com" class="blog-img"><img src="https://github.com/chitralekha18/home/blob/master/images/MuSigPro.png?raw=true" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a>MuSigPro has launched its Singing Competition Platform <span>May, 2022</span></h2>
-					                  <p> MuSigPro, a singing competition platform powered by AI singing quality assessment technology, launches singing competitions every month hosted by influencers and brands. Try it out now! <a href="https://youtu.be/uvHbyCBT6Uw">DEMO VIDEO</a></p> 
-					               </div>
-					            </div>
-					         </article>
-						 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="https://www.music-ir.org/mirex/wiki/2020:Automatic_Lyrics-to-Audio_Alignment_Results" class="blog-img"><img src="https://pbs.twimg.com/profile_images/742838145075417088/VsbJGY46.jpg" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://www.music-ir.org/mirex/wiki/2020:Automatic_Lyrics-to-Audio_Alignment_Results">MIREX 2020 Automatic Lyrics Transcription and Lyrics-to-Audio Alignment</a> <span>Nov, 2020</span></h2>
-					                  <p> HLT-NUS team (Xiaoxue Gao, Chitralekha Gupta, Haizhou Li) has won top position in both tasks (Automatic Lyrics-to-Audio Alignment and Automatic Lyrics Transcription) in MIREX International Benchmarking 2020 and has been ranked first for automatic lyrics-to-audio alignment task two years in a row.</p>
-							  <a href="https://www.eng.nus.edu.sg/ece/news/aligning-lyrics-to-singing-vocal-top-results-in-the-mirex-international-benchmarking-2020/">Press Release</a> 
-					               </div>
-					            </div>
-					         </article>
-						 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="https://musigpro.com" class="blog-img"><img src="https://github.com/chitralekha18/home/blob/master/images/MuSigPro.png?raw=true" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://play.google.com/store/apps/details?id=com.musigpro.app&hl=en_IN&gl=US">MuSigPro app launched on Google Play Store</a> <span>Aug, 2020</span></h2>
-					                  <p> MuSigPro, a singing competition app, powered by AI singing quality assessment technology, is now on playstore. <a href="https://play.google.com/store/apps/details?id=com.musigpro.app&hl=en_IN&gl=US">Try it out now!</a></p> 
-					               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe width="300" height="200" src="https://www.youtube.com/embed/E0wwwpxaUOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							    </div>
-					            </div>
-					         </article>
-						 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-                                    <div class="timeline-label">
-					                  <h2><a href="https://www.ismir2020.net/assets/img/logos/ISMIR-logo_Horizontal%20-%20Acronym%20only_RGB.png" class="blog-img"><img src="https://www.ismir2020.net/assets/img/logos/ISMIR-logo_Horizontal%20-%20Acronym%20only_RGB.png" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://ismir.github.io/ISMIR2020/">ISMIR 2020 </a><span>Oct 11-15, 2020</span></h2>
-                                        <p>Here's our 4-minute presentation video:</p>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe width="300" height="200" src="https://www.youtube.com/embed/9ANDBu7aL-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        </div>
-					               
-					            </div>
-					         </article>
-						 
-						 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="https://www.ismir2020.net/assets/img/logos/ISMIR-logo_Horizontal%20-%20Acronym%20only_RGB.png" class="blog-img"><img src="https://www.ismir2020.net/assets/img/logos/ISMIR-logo_Horizontal%20-%20Acronym%20only_RGB.png" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://ismir.github.io/ISMIR2020/">ISMIR 2020 result</a> <span>July 2020</span></h2>
-                                       <p>Our paper titled, <a href="https://drive.google.com/file/d/1TloXFrwviOLHNLG9XEiVWQarPEhiHY0t/view?usp=sharing">"Automatic Rank Ordering of Singing Vocals with Twin-Neural Network"</a> has been accepted for ISMIR 2020.</p>
-					               </div>
-					            </div>
-					         </article>
-						 
-						 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-                                    <div class="timeline-label">
-					                  <h2><a href="https://2020.ieeeicassp.org/" class="blog-img"><img src="https://i1.wp.com/2020.ieeeicassp.org/wp-content/uploads/2019/05/logo_ICASSP-e1559035843728.png?fit=1975%2C1069&ssl=1" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://2020.ieeeicassp.org/">ICASSP 2020 </a><span>May 4-8, 2020</span></h2>
-                                        <p>Attended the first ever virtual ICASSP 2020! Here are our paper and show and tell presentation videos:</p>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe width="300" height="200" src="https://www.youtube.com/embed/d-UNFkgKolc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <iframe width="300" height="200" src="https://www.youtube.com/embed/J5zSEEB-BBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    
-					               </div>
-					               
-					            </div>
-					         </article>
+								<div class="timeline-entry-inner">
+						&emsp;<h3>&emsp;Sonic Vista</h3> 
+						
+						<div class="container">
+							<div class="one-half">We are building a wearable artifact for people with visual impairments, called SonicVista, that can provide information and experience of distant surrounding environmental scenes (that are beyond audible range) through generative sounds.
+								We are exploring the use of Meta's ARIA glasses in this project.</div>
+							<div class="other-half"><img src="images/sonicvista1.jpg"></div>
 							
-                             <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="https://2020.ieeeicassp.org/" class="blog-img"><img src="https://i1.wp.com/2020.ieeeicassp.org/wp-content/uploads/2019/05/logo_ICASSP-e1559035843728.png?fit=1975%2C1069&ssl=1" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://2020.ieeeicassp.org/">ICASSP 2020 result</a> <span>Jan 2020</span></h2>
-                                       <p>Our paper titled, <a href="https://arxiv.org/abs/1909.10200">"Automatic Lyrics Alignment and Transcription in Polyphonic Music: Does Background Music Help?"</a> has been accepted for ICASSP 2020.</p>
-					               </div>
-					            </div>
-					         </article>
-                             <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="https://2020.ieeeicassp.org/" class="blog-img"><img src="https://i1.wp.com/blog.elsaspeak.com/wp-content/uploads/2019/12/asru_small.png?fit=750%2C421&ssl=1" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="http://asru2019.org/wp/">Organizing ASRU 2019 at Singapore</a> <span>15-18 Dec 2019</span></h2>
-					                  <p>The speech groups in Singapore have come together to organize Automatic Speech Recognition and Understanding Workshop 2019. I am serving as the local logistics chair in the organizing committee.</p>
-					               </div>
-					            </div>
-					         </article>
-                             
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="https://www.music-ir.org/mirex/wiki/2019:Automatic_Lyrics-to-Audio_Alignment_Results" class="blog-img"><img src="https://pbs.twimg.com/profile_images/742838145075417088/VsbJGY46.jpg" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://www.music-ir.org/mirex/wiki/2019:Automatic_Lyrics-to-Audio_Alignment_Results">MIREX 2019 Automatic Lyrics-to-Audio Alignment</a> <span>Nov, 2019</span></h2>
-					                  <p>The "Automatic Lyrics-to-Audio Alignment" system developed by the team from HLT-NUS (Chitralekha Gupta, Emre Yilmaz, Haizhou Li) has outperformed all other systems in MIREX 2019.</p>
-					               </div>
-					            </div>
-					         </article>
-
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					                  <h2><a href="https://musigpro.com" class="blog-img"><img src="https://img1.wsimg.com/isteam/ip/ee42979b-6bf3-458b-aa7b-6df4eeed184d/MuSigPro%20300dpi%20final.png/:/rs=h:412/qt=q:95" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://musigpro.com">MuSigPro</a> <span>Aug, 2019</span></h2>
-					                  <p>Incorporated MuSigPro Pte. Ltd., funded by <a href="http://nus.edu.sg/grip/">NUS Graduate Research Innovation Program (GRIP).</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-                                    <div class="timeline-label">
-					                  <h2><a href="https://scholarbank.nus.edu.sg/handle/10635/154249" class="blog-img"><img src="https://chitralekha18.github.io/home/papers/degree_pic2.png" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a>PhD degree conferred <span>Jul, 2019</span></h2>
-                                        <p>I successfully defended my PhD thesis <a href="https://scholarbank.nus.edu.sg/handle/10635/154249">"Comprehensive Evaluation of Singing Quality"</a> from NUS in May 2019, and was conferred the degree in July.</p>
-					               </div>
-					               
-					            </div>
-					         </article>
-
-                             <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-                                    <div class="timeline-label">
-					                  <h2><img src="https://scontent.fbom22-1.fna.fbcdn.net/v/t31.0-8/1093783_642441822440528_1344463641_o.png?_nc_cat=111&_nc_ohc=NszXygZ3TQ0AX_pCY8-&_nc_ht=scontent.fbom22-1.fna&oh=6f8ea4a90f20659e5bb4b6cbfbad9e2d&oe=5EC8D7D6" width="100" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a>Finalist at the 3-minute thesis competition <span>Jul, 2018</span></h2>
-                                        <p>I presented a part of my PhD thesis in the 3-min thesis competition.</p>
-                                    <iframe src="https://drive.google.com/file/d/1X0fyO1e_zgEQe97XEqNVi4FMGKBLNI6y/preview" width="250" height="150" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>&nbsp;&nbsp;&nbsp;
-                                        <iframe width="250" height="150" src="https://www.youtube.com/embed/sd1MnuqR-q4?start=1582" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    
-					               </div>
-					               
-					            </div>
-					         </article>
-<!--                       https://www.comp.nus.edu.sg/programmes/pg/awards/deans/      -->
-                            <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-                                    <div class="timeline-label">
-					                  <h2><img src="https://www.comp.nus.edu.sg/templates/t3_nus2015/images/assets/logos/dex-build/logo.webp" width="100" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"><a href="https://www.comp.nus.edu.sg/programmes/pg/awards/deans/">NUS Dean's Research Achievement Award</a> <span>2017-2018</span></h2>
-                                        <p>Delighted to receive this <a href="https://www.comp.nus.edu.sg/programmes/pg/awards/deans/">award</a>! It is presented to PhD students who have achieved outstanding research performance over the past academic year.</p>
-                                    
-					               </div>
-					               
-					            </div>
-					         </article>
-                            <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-                                    <div class="timeline-label">
-					                  <h2><img src="https://www.comp.nus.edu.sg/templates/t3_nus2015/images/assets/logos/dex-build/logo.webp" width="100" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"><a href="https://www.comp.nus.edu.sg/entrepreneurship/awards/winners/">SoC Innovation Prize</a> <span>2018</span></h2>
-                                        <p>Our team won this <a href="https://www.comp.nus.edu.sg/entrepreneurship/awards/winners/">award</a> for SLIONS: Singing and Listening to Improve Our Natural Speaking,
-an application for language learning through singing</p>
-                                    
-					               </div>
-					               
-					            </div>
-					         </article>
-                            </article>
-                            <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-                                    <div class="timeline-label">
-					                  <h2><img src="https://www.comp.nus.edu.sg/images/resources/20171222_Best_Student_Paper_APSIPA_ASC_2017.jpg" width="100" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"><a href="https://www.comp.nus.edu.sg/news/archives/y2017/2301-2017-apsipa-asc//">Best Student Paper Award</a> <span>Dec, 2017</span></h2>
-                                        <p>I am happy and motivated after receiving this <a href="https://www.comp.nus.edu.sg/news/archives/y2017/2301-2017-apsipa-asc//">award</a> for our paper titled <a href="https://www.smcnus.org/wp-content/uploads/2013/09/WP-P2.5.pdf">"Perceptual Evaluation of Singing Quality"</a> in APSIPA ASC 2017.</p>
-                                    
-					               </div>
-					               
-					            </div>
-					         </article>
-                        <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="https://ismir2017.smcnus.org/" class="blog-img"><img src="data:image/png;base64,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" width="100" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com" align="left" hspace="20"></a><a href="https://ismir2017.smcnus.org/">Organizing ISMIR 2017 at Suzhou, China</a> <span>23-28 Oct 2017</span></h2>
-					                  <p>Our research group at Sound and Music Computing Lab, NUS, organized the international conference for music information retrieval in China. It was a delightful first experience for me to participate in the organizing committee of an international conference as the Website co-chair.</p>
-					               </div>
-					            </div>
-					         </article>
-                        
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
+						</div><br>
+						&emsp;<i class="icon-pen2"></i>&emsp;<b>April 2024:</b> Our paper titled <b>SonicVista: Towards Creating Awareness of Distant Scenes through Sonification</b> accepted in Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) 2024.<br>
+						&emsp;<i class="icon-pen2"></i>&emsp;<b>March 2024:</b> I and my colleague Shreyas were invited to present our work at <b>Meta's ARIA Summit</b> in Redmond WA, USA.<br>
 				</div>
-			</section>
+				<br>
+				</article>
+			</div>
+				</div>
+				</div>
+				<br><br>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="square">
+						<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+							<div class="timeline-entry-inner">
+								&emsp;<h3>&emsp;Controlled Audio Gen</h3> 
+					
+					<div class="container">
+						<div class="one-half">Video games and movies often require custom sound effects. We are investigating methods to generate environmental sounds with the ability to control various aspects of these sounds, through supervised as well as unsupervised methods of control. For example, we would like to be able to generate wind sounds at low or high wind strength, or the sound of rain when it drizzles or buckets down. </div>
+						<div class="other-half"><img src="images/audiocontrol.png"></div>
+						
+					</div><br>
+					&emsp;<i class="icon-pen2"></i>&emsp;<b>April 2024:</b> Our paper titled <b>Example-Based Framework for Perceptually Guided Audio Texture Generation</b> is accepted in IEEE/ACM Transactions of Audio, Speech, and Language Processing, 2024.<br>
+					&emsp;<i class="icon-pen2"></i>&emsp;<b>Previous Publications: </b> <br>
+					<ul>
+						<li><a href="https://arxiv.org/abs/2304.11648">Towards Controllable Audio Texture Morphing</a>, ICASSP 2023</li>
+						<li><a href="https://dl.acm.org/doi/10.1145/3581641.3584083">Evaluating Descriptive Quality of AI-Generated Audio Using Image-Schemas</a>, ACM IUI 2023.</li>
+						<li><a href="https://arxiv.org/abs/2208.10743">Parameter Sensitivity of Deep-Feature based Evaluation Metrics for Audio Textures</a>, ISMIR 2022.</li>
+						<li><a href="https://arxiv.org/abs/2206.13085">Sound Model Factory: An Integrated System Architecture for Generative Audio Modelling</a>, Springer LNCS, EvoMusART 2022.</li>
+						<li><a href="https://arxiv.org/abs/2103.07390">Signal Representations for Synthesizing Audio Textures with Generative Adversarial Networks</a>, SMC 2021.</li>
+					</ul>
+					<br>
+			</div>
+			
+			</article></div>
+
+			</div>
+			</div>
+				</div>
+				</section>
+            
             
             
 			<!-- <section class="colorlib-services" data-section="demos"> -->
@@ -887,7 +724,7 @@ an application for language learning through singing</p>
 				
 					</div>
 				</div>
-			</section>
+			<!-- </section> -->
 	
 
 		</div><!-- end:colorlib-main -->
