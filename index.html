@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chitralekha Gupta</title>
+  <meta name="description" content="Chitralekha Gupta &mdash; human-centered AI, audio AI, wearables, accessibility." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:   #1a2e4a;
+      --accent: #2563eb;
+      --text:   #1f2937;
+      --muted:  #6b7280;
+      --border: #e5e7eb;
+      --surface:#f8fafc;
+      --bg:     #ffffff;
+      --maxw:   1020px;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 68px; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg); color: var(--text);
+      font-size: 15px; line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(26,46,74,0.97);
+      backdrop-filter: blur(6px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+    .brand { color: #fff; font-weight: 600; font-size: 15px; letter-spacing: .2px; white-space: nowrap; }
+    .navlinks { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+    .navlinks a { color: rgba(255,255,255,.72); font-size: 13.5px; padding: 6px 11px; border-radius: 6px; }
+    .navlinks a:hover { color: #fff; background: rgba(255,255,255,.12); text-decoration: none; }
+
+    /* HERO */
+    .hero { padding: 52px 0 28px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 270px; gap: 40px; align-items: start; }
+    @media (max-width:740px) { .hero-grid { grid-template-columns: 1fr; } .hero-photo { max-width: 180px; } }
+    .hero-photo { width: 100%; aspect-ratio: 1; border-radius: 50%; border: 3px solid var(--border); overflow: hidden; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+    h1 {
+      margin: 0 0 4px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 32px; font-weight: 700; letter-spacing: -.4px;
+      color: var(--navy); line-height: 1.2;
+    }
+    .hero-title { margin: 0 0 6px; font-size: 14px; color: var(--muted); font-weight: 400; }
+    .hero-desc { margin: 12px 0 0; font-size: 14.5px; color: var(--text); line-height: 1.75; max-width: 580px; }
+    .hero-meta { margin: 6px 0 0; font-size: 13.5px; color: var(--muted); }
+    .hero-meta a { color: var(--accent); }
+    .research-interests { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .interest-tag {
+      font-size: 12.5px; padding: 4px 10px; border-radius: 999px;
+      background: #e8f0fe; color: #1d4ed8; font-weight: 500; border: 1px solid #bfdbfe;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg); font-size: 13px; color: var(--text); font-weight: 500;
+    }
+    .chip:hover { background: var(--surface); text-decoration: none; }
+
+    /* SECTIONS */
+    section { padding: 32px 0; border-top: 1px solid var(--border); }
+    .sec-header { margin-bottom: 18px; }
+    .sec-title {
+      margin: 0 0 4px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 21px; font-weight: 600; color: var(--navy); letter-spacing: -.2px;
+    }
+    .sec-sub { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    /* PROJECTS GRID */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width:900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width:580px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; background: var(--bg);
+      transition: transform .12s ease, box-shadow .14s ease;
+      display: flex; flex-direction: column; color: var(--text);
+    }
+    a.card:hover, a.card:focus,
+    .card-clickable:hover, .card-clickable:focus {
+      transform: translateY(-2px); box-shadow: 0 10px 28px rgba(26,46,74,.10);
+      text-decoration: none; color: var(--text);
+    }
+    .thumb {
+      height: 140px; background: var(--surface); border-bottom: 1px solid var(--border);
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+    }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .card-title { margin: 0; font-weight: 600; font-size: 14px; color: var(--navy); line-height: 1.4; }
+    .card-desc { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+    .tag { font-size: 11.5px; color: var(--muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 999px; background: var(--bg); }
+    .card-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; padding: 5px 10px;
+      border: 1px solid var(--border); border-radius: 7px;
+      background: var(--bg); font-size: 12.5px; color: var(--text);
+    }
+    .btn:hover { background: var(--surface); text-decoration: none; }
+
+    /* NEWS */
+    .news { display: flex; flex-direction: column; gap: 0; }
+    .news-item {
+      display: grid; grid-template-columns: 96px 1fr;
+      gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--border);
+    }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    @media (max-width:560px) { .news-item { grid-template-columns: 1fr; gap: 3px; } }
+    .news-date { font-size: 12.5px; color: var(--muted); font-weight: 600; padding-top: 2px; }
+    .news-text { margin: 0; font-size: 14px; line-height: 1.65; }
+    .news-label {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .5px;
+      padding: 2px 7px; border-radius: 4px; margin-right: 6px; vertical-align: middle;
+    }
+    .label-award { background: #fef3c7; color: #92400e; }
+    .label-grant { background: #dcfce7; color: #166534; }
+    .label-paper { background: #e0e7ff; color: #3730a3; }
+    .label-rank  { background: #fce7f3; color: #9d174d; }
+
+    /* PUBLICATIONS */
+    .pub-year-group { margin-bottom: 26px; }
+    .pub-year {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px; font-weight: 600; color: var(--navy);
+      margin: 0 0 10px; padding-bottom: 5px;
+      border-bottom: 2px solid var(--navy); display: inline-block;
+    }
+    .pub-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+    .pub-item {
+      padding: 14px 16px; border: 1px solid var(--border);
+      border-radius: var(--radius); background: var(--bg);
+      font-size: 13.5px; line-height: 1.7;
+    }
+    .pub-title { font-weight: 600; color: var(--navy); font-size: 14px; }
+    .pub-title a { color: var(--navy); }
+    .pub-title a:hover { color: var(--accent); text-decoration: underline; }
+    .pub-authors { color: var(--muted); margin: 2px 0; }
+    .pub-authors strong { color: var(--text); font-weight: 600; }
+    .pub-venue { font-style: italic; color: var(--text); font-size: 13px; }
+    .pub-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      padding: 2px 7px; border-radius: 4px;
+      background: #fef3c7; color: #92400e; margin-left: 6px; vertical-align: middle;
+    }
+    .scholar-link { margin-top: 18px; font-size: 14px; }
+
+    footer { padding: 30px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Chitralekha Gupta</div>
+      <nav class="navlinks">
+        <a href="#top">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Chitralekha Gupta</h1>
+          <p class="hero-title">
+            Senior Research Fellow &middot; School of Computing, National University of Singapore
+          </p>
+          <p class="hero-desc">
+            I build evidence-based AI systems at the intersection of human-computer interaction,
+            audio signal processing, and wearable sensing &mdash; translating advances in generative
+            models and multimodal AI into tools that people can use in everyday contexts.
+            My work spans real-world audio intelligence, assistive technologies, wearable cognition,
+            health-oriented explainable AI, and technology translation through entrepreneurship.
+          </p>
+          <div class="research-interests">
+            <span class="interest-tag">Audio AI</span>
+            <span class="interest-tag">Human-Computer Interaction</span>
+            <span class="interest-tag">Accessibility</span>
+            <span class="interest-tag">Wearable Computing</span>
+            <span class="interest-tag">Explainable AI</span>
+            <span class="interest-tag">Generative Audio</span>
+            <span class="interest-tag">Music Information Retrieval</span>
+          </div>
+          <div class="chips">
+            <a class="chip" href="papers/CG_ResumeFeb2026.pdf" target="_blank" rel="noreferrer">&#128196;&ensp;CV</a>
+            <a class="chip" href="https://scholar.google.com/citations?user=NFi7pkcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">&#127891;&ensp;Google Scholar</a>
+            <a class="chip" href="https://github.com/chitralekha18" target="_blank" rel="noreferrer">&#128296;&ensp;GitHub</a>
+          </div>
+          <p class="hero-meta" style="margin-top:16px;">
+            &#9993; chitralekha [at] nus.edu.sg &nbsp;&middot;&nbsp; Augmented Human Lab, 3 Research Link, Innovation 4.0, NUS
+          </p>
+        </div>
+        <div class="hero-photo">
+          <img src="papers/chitra.png" alt="Portrait of Chitralekha Gupta" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <!-- <section id="about">
+      <div class="sec-header">
+        <h2 class="sec-title">About</h2>
+      </div>
+      <p style="font-size:14.5px;line-height:1.8;max-width:780px;margin:0 0 10px;">
+        I am a Senior Research Fellow at the <strong>Augmented Human Lab</strong>, School of Computing,
+        National University of Singapore, where I lead research on human-centered AI systems.
+        I am also the founder of <a href="https://musigpro.com" target="_blank" rel="noreferrer">MuSigPro Pte. Ltd.</a>,
+        a music-tech spinout commercialising AI-driven singing quality assessment and lyrics alignment.
+      </p>
+      <p style="font-size:14.5px;line-height:1.8;max-width:780px;margin:0;">
+        My research programme builds on over a decade of work in audio signal processing and HCI,
+        spanning acoustic modelling, generative audio synthesis, wearable sensing, accessibility,
+        and explainable AI for health. I have authored 40+ peer-reviewed papers, received best-paper
+        recognition at IEEE VR (2024), placed 1st at MIREX (2019, 2020) and 3rd at the DCASE Challenge (2023),
+        and secured competitive grants totalling over 1 million dollars.
+      </p>
+    </section> -->
+
+    <!-- PROJECTS -->
+    <!-- Cards are rendered dynamically from the inline JSON below.
+         To add a project, create a sub-folder under projects/ containing
+         a meta.json (title, blurb, tags, link, image, order) and a
+         thumbnail image.  Pushing the new folder triggers the
+         "Update Projects Manifest" workflow, which auto-updates both
+         projects/projects.json and the inline data block below. -->
+    <section id="projects">
+      <div class="sec-header">
+        <h2 class="sec-title">Research Projects</h2>
+        <p class="sec-sub">Selected projects, ordered by current focus.</p>
+      </div>
+      <div class="grid" id="projects-grid"></div>
+    </section>
+
+    <!-- BEGIN PROJECTS DATA – updated automatically by CI; do not edit by hand -->
+    <script type="application/json" id="projects-data">
+  [
+    {
+      "folder": "droneaudioset",
+      "title": "DroneAudioset",
+      "blurb": "Large-scale dataset and benchmarks for drone-based audio perception in search-and-rescue settings.",
+      "tags": [
+        "Datasets",
+        "Audio Perception",
+        "SAR"
+      ],
+      "link": "projects/droneaudioset.html",
+      "image": "thumbnail.png",
+      "order": 1
+    },
+    {
+      "folder": "factually",
+      "title": "Feeling the Facts",
+      "blurb": "Investigating whether just-in-time AI nudges can support misinformation resilience in live auditory streams.",
+      "tags": [
+        "Wearables",
+        "Misinformation",
+        "LLMs"
+      ],
+      "link": "projects/factually.html",
+      "image": "thumbnail.png",
+      "order": 2
+    },
+    {
+      "folder": "dysarthria-clarity",
+      "title": "Explainable Dysarthric Speech Clarity",
+      "blurb": "Temporally explainable speech clarity scoring to support clinical assessment workflows for motor speech disorders.",
+      "tags": [
+        "Explainable AI",
+        "Speech",
+        "Health"
+      ],
+      "link": "projects/dysarthria-clarity.html",
+      "image": "thumbnail.png",
+      "order": 3
+    },
+    {
+      "folder": "scene-to-audio",
+      "title": "Scene-to-Audio (SonicVista)",
+      "blurb": "Distant scene sonification for blind and low-vision users via generative audio compositions.",
+      "tags": [
+        "Accessibility",
+        "Audio AI",
+        "Wearables"
+      ],
+      "link": "projects/scene-to-audio.html",
+      "image": "thumbnail.jpg",
+      "order": 4
+    },
+    {
+      "folder": "controlled-audio-gen",
+      "title": "Controllable Audio Generation",
+      "blurb": "Methods for controllable synthesis and perceptual morphing of environmental sounds and audio textures.",
+      "tags": [
+        "Generative Audio",
+        "Control",
+        "Evaluation"
+      ],
+      "link": "projects/controlled-audio-gen.html",
+      "image": "thumbnail.png",
+      "order": 5
+    },
+    {
+      "folder": "musigpro",
+      "title": "MuSigPro",
+      "blurb": "Commercialising AI for singing quality assessment and lyrics alignment; adopted by real users and industry partners.",
+      "tags": [
+        "Startup",
+        "Music AI",
+        "Translation"
+      ],
+      "link": "https://musigpro.com/products",
+      "image": "thumbnail.png",
+      "order": 6
+    }
+  ]
+    </script>
+    <!-- END PROJECTS DATA -->
+
+    <script>
+    (function () {
+      'use strict';
+
+      function buildCard(project) {
+        var imgSrc     = 'projects/' + project.folder + '/' + project.image;
+        var link       = project.link || '';
+        var isExternal = /^https?:\/\//i.test(link);
+
+        var card;
+        if (isExternal) {
+          // Use a <div role="link"> so we can open the URL in a new tab
+          // without nesting an <a> inside another interactive element.
+          card = document.createElement('div');
+          card.className = 'card card-clickable';
+          card.tabIndex  = 0;
+          card.setAttribute('role', 'link');
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', function () {
+            var w = window.open(link, '_blank');
+            if (w) w.opener = null;
+            card.blur();
+          });
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              var w = window.open(link, '_blank');
+              if (w) w.opener = null;
+            }
+          });
+        } else {
+          card = document.createElement('a');
+          card.className = 'card';
+          if (link) card.href = link;
+        }
+
+        // Thumbnail
+        var thumb = document.createElement('div');
+        thumb.className = 'thumb';
+        var img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = project.title + ' thumbnail';
+        thumb.appendChild(img);
+
+        // Card body
+        var body = document.createElement('div');
+        body.className = 'card-body';
+
+        var titleEl = document.createElement('p');
+        titleEl.className = 'card-title';
+        titleEl.textContent = project.title;
+
+        var descEl = document.createElement('p');
+        descEl.className = 'card-desc';
+        descEl.textContent = project.blurb;
+
+        var tagsEl = document.createElement('div');
+        tagsEl.className = 'tags';
+        (project.tags || []).forEach(function (t) {
+          var span = document.createElement('span');
+          span.className = 'tag';
+          span.textContent = t;
+          tagsEl.appendChild(span);
+        });
+
+        body.appendChild(titleEl);
+        body.appendChild(descEl);
+        body.appendChild(tagsEl);
+
+        card.appendChild(thumb);
+        card.appendChild(body);
+        return card;
+      }
+
+      var dataEl   = document.getElementById('projects-data');
+      var projects = dataEl ? JSON.parse(dataEl.textContent) : [];
+      var grid     = document.getElementById('projects-grid');
+      if (grid) {
+        projects.forEach(function (p) { grid.appendChild(buildCard(p)); });
+      }
+    }());
+    </script>
+
+    <!-- NEWS -->
+    <section id="news">
+      <div class="sec-header">
+        <h2 class="sec-title">News &amp; Highlights</h2>
+        <p class="sec-sub">Recent awards, grants, and accepted papers.</p>
+      </div>
+      <div class="news">
+        <div class="news-item">
+          <div class="news-date">2026</div>
+          <p class="news-text"><span class="news-label label-grant">Grant</span>Awarded the prestigious <strong>NRF Translational &amp; Innovation Grant</strong>. I serve as Co-PI on this exciting project.</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026</div>
+          <p class="news-text"><span class="news-label label-paper">Paper</span>Two full papers accepted to <em>ACM CHI 2026</em>:<br>
+          &bull; &ldquo;<strong>Feeling the Facts: Real-time wearable fact-checkers can use nudges to reduce user belief in false information</strong>&rdquo;<br>
+          &bull; &ldquo;<strong>Beyond Descriptions: A Generative Scene2Audio Framework for Blind and Low-Vision Users to Experience Vista Landscapes</strong>&rdquo;</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Dec 2025</div>
+          <p class="news-text"><span class="news-label label-paper">Paper</span><strong>DroneAudioset</strong> accepted at <em>NeurIPS 2025</em> (Datasets &amp; Benchmarks track).</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Oct 2025</div>
+          <p class="news-text"><span class="news-label label-award">Award</span>Received the <strong>Innovation Fellow Award</strong> from NUS Enterprise.</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Mar 2024</div>
+          <p class="news-text"><span class="news-label label-award">Award</span><strong>Best Paper Award</strong> at <em>IEEE VR 2024</em> for <em>VR.net</em>.</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2024</div>
+          <p class="news-text"><span class="news-label label-grant">Grant</span>Awarded <strong>Singapore&ndash;France MinDef grant</strong> on blind-drone human&ndash;swarm interaction.</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2024</div>
+          <p class="news-text"><span class="news-label label-grant">Grant</span>Awarded <strong>MOE Tier-1 / NUHS Seed Grant</strong> on explainable dysarthric speech assessment.</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2023</div>
+          <p class="news-text"><span class="news-label label-rank">Rank</span>Placed <strong>3rd</strong> at the DCASE Challenge 2023 (Foley Sound Synthesis task).</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2019&ndash;2020</div>
+          <p class="news-text"><span class="news-label label-rank">Rank</span>Placed <strong>1st</strong> at MIREX for lyrics alignment and transcription (two consecutive years).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="sec-header">
+        <h2 class="sec-title">Selected Publications</h2>
+        <p class="sec-sub">Representative works. Full list on <a href="https://scholar.google.com/citations?user=NFi7pkcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a>.</p>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year">2026</div>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2603.27289" target="_blank" rel="noreferrer">Feeling the Facts: Real-time Wearable Fact-checkers Can Use Nudges to Reduce User Belief in False Information</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Nadia Victoria Aritonang, Dixon Prem Daniel Rajendran, Valdemar Danry, Pattie Maes, Suranga Nanayakkara</div>
+            <div class="pub-venue"><em>ACM CHI 2026</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2603.27295" target="_blank" rel="noreferrer">Beyond Descriptions: A Generative Scene2Audio Framework for Blind and Low-Vision Users to Experience Vista Landscapes</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Jing Peng, Ashwin Ram, Shreyas Sridhar, Christophe Jouffrais, Suranga Nanayakkara</div>
+            <div class="pub-venue"><em>ACM CHI 2026</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year">2025</div>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2510.15383" target="_blank" rel="noreferrer">DroneAudioset: A Dataset and Benchmarks for Drone Audio Perception in Search and Rescue</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, S. Ramesh, Prasanth Sasikumar, K.P. Yeo, Suranga Nanayakkara</div>
+            <div class="pub-venue">NeurIPS 2025 &mdash; Datasets and Benchmarks Track</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2506.00454" target="_blank" rel="noreferrer">Towards Temporally Explainable Dysarthric Speech Clarity Assessment</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, S. Park, M. Kwan, X. Fung, A. Yip, Suranga Nanayakkara</div>
+            <div class="pub-venue"><em>Interspeech 2025</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3706599.3719849" target="_blank" rel="noreferrer">Scene-to-Audio: Distant Scene Sonification for Blind and Low Vision People</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Ashwin Ram, Shreyas Sridhar, Christophe Jouffrais, Suranga Nanayakkara</div>
+            <div class="pub-venue"><em>ACM CHI 2025</em> &mdash; Extended Abstract</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://dl.acm.org/doi/full/10.1145/3706598.3713438" target="_blank" rel="noreferrer">Human Robot Interaction for Blind and Low Vision People: A Systematic Literature Review</a></div>
+            <div class="pub-authors">Yize Wei, Nathan Rocher, <strong>Chitralekha Gupta</strong>, Mia Huong Nguyen, Roger Zimmermann, Wei Tsang Ooi, Christophe Jouffrais, Suranga Nanayakkara</div>
+            <div class="pub-venue"><em>ACM CHI 2025</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year">2024</div>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10458372" target="_blank" rel="noreferrer">VR.net: A Real-world Dataset for Virtual Reality Motion Sickness Research</a> <span class="pub-badge">Best Paper &mdash; IEEE VR</span></div>
+            <div class="pub-authors">Elliot Wen, <strong>Chitralekha Gupta</strong>, Prasanth Sasikumar, Mark Billinghurst, et al.</div>
+            <div class="pub-venue"><em>IEEE VR 2024</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3659609" target="_blank" rel="noreferrer">SonicVista: Towards Creating Awareness of Distant Scenes through Sonification</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Shreyas Sridhar, Denys Matthies, Christophe Jouffrais, Suranga Nanayakkara</div>
+            <div class="pub-venue"><em>Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2024</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year">2023</div>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2308.11859" target="_blank" rel="noreferrer">Example-Based Framework for Perceptually Guided Audio Texture Generation</a></div>
+            <div class="pub-authors">Purnima Kamath, <strong>Chitralekha Gupta</strong>, Lonce Wyse, Suranga Nanayakkara</div>
+            <div class="pub-venue"><em>IEEE/ACM Transactions on Audio, Speech, and Language Processing (TASLP), 2023</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2304.11648" target="_blank" rel="noreferrer">Towards Controllable Audio Texture Morphing</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>*, Purnima Kamath*, Yize Wei, Zhuoyao Li, Suranga Nanayakkara, Lonce Wyse</div>
+            <div class="pub-venue"><em>ICASSP 2023</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://www.tandfonline.com/doi/abs/10.1080/10447318.2023.2286090" target="_blank" rel="noreferrer">Can AI Models Summarize Your Diary Entries? Investigating Utility of Abstractive Summarization for Autobiographical Text</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>*, Shamane Siriwardhana*, Tharindu Kaluarachchi, Vipula Dissanayake, et al.</div>
+            <div class="pub-venue"><em>International Journal of Human&ndash;Computer Interaction (IJHCI), 2023</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year">2022</div>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9829265" target="_blank" rel="noreferrer">Deep Learning Approaches in Topics of Singing Information Processing</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Haizhou Li, Masataka Goto</div>
+            <div class="pub-venue"><em>IEEE/ACM Transactions on Audio, Speech, and Language Processing (TASLP), 2022</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9833328" target="_blank" rel="noreferrer">Automatic Lyrics Transcription of Polyphonic Music With Lyrics-Chord Multi-Task Learning</a></div>
+            <div class="pub-authors">Xiaoxue Gao, <strong>Chitralekha Gupta</strong>, Haizhou Li</div>
+            <div class="pub-venue"><em>IEEE/ACM Transactions on Audio, Speech, and Language Processing (TASLP), 2022</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2208.10743" target="_blank" rel="noreferrer">Parameter Sensitivity of Deep-Feature Based Evaluation Metrics for Audio Textures</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Yize Wei, Zequn Gong, Purnima Kamath, Zhuoyao Li, Lonce Wyse</div>
+            <div class="pub-venue"><em>ISMIR 2022</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year">2019 &ndash; 2021</div>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/1906.10369" target="_blank" rel="noreferrer">Acoustic Modeling for Automatic Lyrics-to-Audio Alignment</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Emre Yilmaz, Haizhou Li</div>
+            <div class="pub-venue"><em>Interspeech 2019</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/8682582" target="_blank" rel="noreferrer">Automatic Lyrics-to-Audio Alignment on Polyphonic Music using Singing-Adapted Acoustic Models</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>*, Bidisha Sharma*, Haizhou Li, Ye Wang</div>
+            <div class="pub-venue"><em>ICASSP 2019 (*equal contributors)</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2103.07390" target="_blank" rel="noreferrer">Signal Representations for Synthesizing Audio Textures with Generative Adversarial Networks</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Purnima Kamath, Lonce Wyse</div>
+            <div class="pub-venue"><em>SMC 2021</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pub-year-group">
+        <div class="pub-year">2017 &ndash; 2018</div>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://www.cambridge.org/core/journals/apsipa-transactions-on-signal-and-information-processing/article/technical-framework-for-automatic-perceptual-evaluation-of-singing-quality/5F6AECB907FE842481D070850EDF1EFA" target="_blank" rel="noreferrer">A Technical Framework for Automatic Perceptual Evaluation of Singing Quality</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Haizhou Li, Ye Wang</div>
+            <div class="pub-venue"><em>APSIPA Transactions on Signal and Information Processing, 2018</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://www.smcnus.org/wp-content/uploads/2013/09/WP-P2.5.pdf" target="_blank" rel="noreferrer">Perceptual Evaluation of Singing Quality</a> <span class="pub-badge">Best Student Paper</span></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, Haizhou Li, Ye Wang</div>
+            <div class="pub-venue"><em>APSIPA ASC 2017</em></div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://www.smcnus.org/wp-content/uploads/2017/08/Gupta2017.pdf" target="_blank" rel="noreferrer">Towards Automatic Mispronunciation Detection in Singing</a></div>
+            <div class="pub-authors"><strong>Chitralekha Gupta</strong>, David Grunberg, Preeti Rao, Ye Wang</div>
+            <div class="pub-venue"><em>ISMIR 2017</em></div>
+          </li>
+        </ul>
+      </div>
+
+      <p class="scholar-link">
+        <a href="https://scholar.google.com/citations?user=NFi7pkcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">View complete publication list on Google Scholar &rarr;</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Chitralekha Gupta &middot; Augmented Human Lab, NUS</span>
+      <span>chitralekha [at] nus.edu.sg</span>
+    </div>
+  </footer>
+
+</body>
+</html>
