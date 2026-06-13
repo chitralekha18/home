@@ -1,0 +1,8 @@
+{
+  "title": "DroneAudioset",
+  "blurb": "Large-scale dataset and benchmarks for drone-based audio perception in search-and-rescue settings.",
+  "tags": ["Datasets", "Audio Perception", "SAR"],
+  "link": "projects/droneaudioset.html",
+  "image": "thumbnail.png",
+  "order": 1
+}

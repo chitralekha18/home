@@ -1,0 +1,8 @@
+{
+  "title": "Controllable Audio Generation",
+  "blurb": "Methods for controllable synthesis and perceptual morphing of environmental sounds and audio textures.",
+  "tags": ["Generative Audio", "Control", "Evaluation"],
+  "link": "projects/controlled-audio-gen.html",
+  "image": "thumbnail.png",
+  "order": 5
+}
