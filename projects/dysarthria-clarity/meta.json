@@ -1,0 +1,8 @@
+{
+  "title": "Explainable Dysarthric Speech Clarity",
+  "blurb": "Temporally explainable speech clarity scoring to support clinical assessment workflows for motor speech disorders.",
+  "tags": ["Explainable AI", "Speech", "Health"],
+  "link": "projects/dysarthria-clarity.html",
+  "image": "thumbnail.png",
+  "order": 3
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "folder": "droneaudioset",
+    "title": "DroneAudioset",
+    "blurb": "Large-scale dataset and benchmarks for drone-based audio perception in search-and-rescue settings.",
+    "tags": [
+      "Datasets",
+      "Audio Perception",
+      "SAR"
+    ],
+    "link": "projects/droneaudioset.html",
+    "image": "thumbnail.png",
+    "order": 1
+  },
+  {
+    "folder": "factually",
+    "title": "Feeling the Facts",
+    "blurb": "Investigating whether just-in-time AI nudges can support misinformation resilience in live auditory streams.",
+    "tags": [
+      "Wearables",
+      "Misinformation",
+      "LLMs"
+    ],
+    "link": "projects/factually.html",
+    "image": "thumbnail.png",
+    "order": 2
+  },
+  {
+    "folder": "dysarthria-clarity",
+    "title": "Explainable Dysarthric Speech Clarity",
+    "blurb": "Temporally explainable speech clarity scoring to support clinical assessment workflows for motor speech disorders.",
+    "tags": [
+      "Explainable AI",
+      "Speech",
+      "Health"
+    ],
+    "link": "projects/dysarthria-clarity.html",
+    "image": "thumbnail.png",
+    "order": 3
+  },
+  {
+    "folder": "scene-to-audio",
+    "title": "Scene-to-Audio (SonicVista)",
+    "blurb": "Distant scene sonification for blind and low-vision users via generative audio compositions.",
+    "tags": [
+      "Accessibility",
+      "Audio AI",
+      "Wearables"
+    ],
+    "link": "projects/scene-to-audio.html",
+    "image": "thumbnail.jpg",
+    "order": 4
+  },
+  {
+    "folder": "controlled-audio-gen",
+    "title": "Controllable Audio Generation",
+    "blurb": "Methods for controllable synthesis and perceptual morphing of environmental sounds and audio textures.",
+    "tags": [
+      "Generative Audio",
+      "Control",
+      "Evaluation"
+    ],
+    "link": "projects/controlled-audio-gen.html",
+    "image": "thumbnail.png",
+    "order": 5
+  },
+  {
+    "folder": "musigpro",
+    "title": "MuSigPro",
+    "blurb": "Commercialising AI for singing quality assessment and lyrics alignment; adopted by real users and industry partners.",
+    "tags": [
+      "Startup",
+      "Music AI",
+      "Translation"
+    ],
+    "link": "https://musigpro.com/products",
+    "image": "thumbnail.png",
+    "order": 6
+  }
+]

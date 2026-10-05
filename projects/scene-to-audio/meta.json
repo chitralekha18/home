@@ -1,0 +1,8 @@
+{
+  "title": "Scene-to-Audio (SonicVista)",
+  "blurb": "Distant scene sonification for blind and low-vision users via generative audio compositions.",
+  "tags": ["Accessibility", "Audio AI", "Wearables"],
+  "link": "projects/scene-to-audio.html",
+  "image": "thumbnail.jpg",
+  "order": 4
+}

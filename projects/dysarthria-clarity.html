@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explainable Dysarthric Speech Clarity – Chitralekha Gupta</title>
+  <meta name="description" content="Temporally explainable speech clarity scoring to support clinical assessment workflows for motor speech disorders." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:   #1a2e4a;
+      --accent: #2563eb;
+      --text:   #1f2937;
+      --muted:  #6b7280;
+      --border: #e5e7eb;
+      --surface:#f8fafc;
+      --bg:     #ffffff;
+      --maxw:   1020px;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 68px; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg); color: var(--text);
+      font-size: 15px; line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(26,46,74,0.97);
+      backdrop-filter: blur(6px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+    .brand { color: #fff; font-weight: 600; font-size: 15px; letter-spacing: .2px; white-space: nowrap; text-decoration: none; }
+    .brand:hover { text-decoration: none; color: rgba(255,255,255,.85); }
+    .navlinks { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+    .navlinks a { color: rgba(255,255,255,.72); font-size: 13.5px; padding: 6px 11px; border-radius: 6px; }
+    .navlinks a:hover { color: #fff; background: rgba(255,255,255,.12); text-decoration: none; }
+
+    /* PAGE HEADER */
+    .project-header { padding: 44px 0 28px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13.5px; color: var(--muted); margin-bottom: 20px;
+      border: 1px solid var(--border); border-radius: 7px;
+      padding: 6px 12px; background: var(--surface);
+    }
+    .back-link:hover { color: var(--accent); text-decoration: none; background: var(--bg); }
+    .project-title {
+      margin: 0 0 8px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 30px; font-weight: 700; letter-spacing: -.4px;
+      color: var(--navy); line-height: 1.2;
+    }
+    .project-blurb { margin: 0 0 16px; font-size: 15px; color: var(--muted); line-height: 1.7; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0; }
+    .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 3px 9px; border-radius: 999px; background: var(--bg); }
+
+    /* THUMBNAIL */
+    .project-thumb {
+      width: 100%; max-height: 420px; object-fit: cover;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      display: block; margin: 28px 0;
+    }
+
+    /* SECTIONS */
+    section { padding: 28px 0; border-top: 1px solid var(--border); }
+    .sec-title {
+      margin: 0 0 14px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 19px; font-weight: 600; color: var(--navy); letter-spacing: -.2px;
+    }
+    .prose { font-size: 14.5px; line-height: 1.8; color: var(--text); }
+    .prose p { margin: 0 0 14px; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* FIGURE GRID */
+    .fig-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; align-items: start; }
+    @media (max-width: 640px) { .fig-grid { grid-template-columns: 1fr; } }
+    .fig-item { display: flex; flex-direction: column; }
+    .fig-item img {
+      width: 100%; height: 280px;
+      object-fit: contain; object-position: center;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      display: block; background: var(--surface);
+    }
+    .fig-caption { font-size: 12.5px; color: var(--muted); margin-top: 6px; text-align: center; }
+
+    /* PUBLICATIONS */
+    .pub-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+    .pub-item {
+      padding: 14px 16px; border: 1px solid var(--border);
+      border-radius: var(--radius); background: var(--bg);
+      font-size: 13.5px; line-height: 1.7;
+    }
+    .pub-title { font-weight: 600; color: var(--navy); font-size: 14px; }
+    .pub-title a { color: var(--navy); }
+    .pub-title a:hover { color: var(--accent); text-decoration: underline; }
+    .pub-authors { color: var(--muted); margin: 2px 0; }
+    .pub-authors strong { color: var(--text); font-weight: 600; }
+    .pub-venue { font-style: italic; color: var(--text); font-size: 13px; }
+    .pub-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      padding: 2px 7px; border-radius: 4px;
+      background: #fef3c7; color: #92400e; margin-left: 6px; vertical-align: middle;
+    }
+
+    footer { padding: 30px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); margin-top: 16px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+    /* RESEARCH QUESTION */
+    .research-q {
+      margin: 20px 0 0;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: #eff6ff;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 15px; font-style: italic; color: var(--navy);
+      font-weight: 500; line-height: 1.6; max-width: 780px;
+    }
+
+    /* RESOURCE LINKS */
+    .resource-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .resource-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px;
+      background: var(--bg); font-size: 13px; color: var(--text); font-weight: 500;
+    }
+    .resource-btn:hover { background: var(--surface); text-decoration: none; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">Chitralekha Gupta</a>
+      <nav class="navlinks">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#publications">Publications</a>
+        <a href="../index.html#news">News</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="project-header">
+      <a class="back-link" href="../index.html#projects">&#8592; Back to Projects</a>
+      <h1 class="project-title">Explainable Dysarthric Speech Clarity</h1>
+      <p class="project-blurb">
+        Temporally explainable speech clarity scoring to support clinical assessment workflows for motor speech disorders.
+      </p>
+      <div class="tags">
+        <span class="tag">Explainable AI</span>
+        <span class="tag">Speech</span>
+        <span class="tag">Health</span>
+      </div>
+      <blockquote class="research-q">
+        &ldquo;Can AI provide explainable speech assessment feedback to support dysarthric speech therapy in the context of Singapore?&rdquo;
+      </blockquote>
+    </div>
+
+    <div class="fig-grid" style="margin: 28px 0;">
+      <div class="fig-item">
+        <img
+          src="../images/dysarthria-therapy-session.png"
+          alt="Clinician and patient during speech therapy session"
+        />
+      </div>
+      <div class="fig-item">
+        <img
+          src="../images/dysarthria-pipeline.png"
+          alt="System pipeline: overall clarity scoring and temporal mispronunciation localisation"
+        />
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section>
+      <h2 class="sec-title">Problem</h2>
+      <div class="prose">
+        <p>
+          Dysarthria is a motor speech disorder caused by neurological damage — from conditions such as
+          stroke, cerebral palsy, Parkinson's disease, or ALS — that impairs the muscles controlling
+          speech. Individuals with dysarthria often produce speech that is difficult to understand,
+          affecting their ability to communicate and participate in daily life.
+        </p>
+        <p>
+          Clinical assessment of dysarthric speech clarity is time-consuming, requires trained
+          speech-language pathologists, and typically yields a single holistic score with little
+          insight into <em>which parts</em> of an utterance are unclear. This lack of temporal
+          granularity limits the clinician's ability to design targeted rehabilitation exercises and
+          to track fine-grained progress over time.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">Our Approach</h2>
+      <div class="prose">
+        <p>
+          We developed a temporally explainable speech clarity scoring system that not only predicts
+          an overall clarity score for each utterance but also highlights <em>when</em> within the
+          utterance the intelligibility degrades. The approach combines acoustic modelling with
+          temporal attention mechanisms, enabling the model to localise low-clarity segments and
+          produce interpretable, time-aligned saliency maps.
+        </p>
+        <p>
+          These explanations are designed to be clinically meaningful: a therapist can see, for
+          example, that a patient's vowels in the middle of an utterance are consistently unclear,
+          guiding targeted articulatory exercises. The system is validated against expert clinician
+          ratings and shows strong alignment between the predicted low-clarity segments and
+          regions annotated by human raters.
+        </p>
+        <p>
+          This work is funded by the MOE Tier-1 / NUHS Seed Grant on explainable dysarthric speech
+          assessment (2024).
+        </p>
+      </div>
+
+      <div class="fig-grid">
+        <div class="fig-item">
+          <img
+            src="../images/dysarthria-error-localisation.png"
+            alt="Temporal error localisation: audio waveform with therapist annotation and ASR output aligned on the spectrogram"
+          />
+          <p class="fig-caption">Temporal error localisation — therapist annotations aligned with ASR-detected mispronunciations</p>
+        </div>
+        <div class="fig-item">
+          <img
+            src="../images/dysarthria-dashboard.png"
+            alt="Speech Therapy Dashboard showing reading analysis results with highlighted mispronunciations"
+          />
+          <p class="fig-caption">Speech Therapy Dashboard: overall accuracy, error breakdown, and word-level feedback</p>
+        </div>
+      </div>
+
+      <div class="resource-links">
+        <a class="resource-btn" href="https://apps.ahlab.org/interspeech25_speechtherapy/" target="_blank" rel="noreferrer">
+          &#127279;&ensp;Demo / Samples Website
+        </a>
+        <a class="resource-btn" href="https://github.com/augmented-human-lab/interspeech25_speechtherapy" target="_blank" rel="noreferrer">
+          &#128296;&ensp;Code on GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+      <h2 class="sec-title">Related Publications</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2506.00454" target="_blank" rel="noreferrer">
+              Towards Temporally Explainable Dysarthric Speech Clarity Assessment
+            </a>
+          </div>
+          <div class="pub-authors">
+            <strong>Chitralekha Gupta</strong>, S. Park, M. Kwan, X. Fung, A. Yip, Suranga Nanayakkara
+          </div>
+          <div class="pub-venue"><em>Interspeech 2025</em></div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Chitralekha Gupta &middot; Augmented Human Lab, NUS</span>
+      <span>chitralekha [at] nus.edu.sg</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scene-to-Audio (SonicVista) – Chitralekha Gupta</title>
+  <meta name="description" content="Distant scene sonification for blind and low-vision users via generative audio compositions." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:   #1a2e4a;
+      --accent: #2563eb;
+      --text:   #1f2937;
+      --muted:  #6b7280;
+      --border: #e5e7eb;
+      --surface:#f8fafc;
+      --bg:     #ffffff;
+      --maxw:   1020px;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 68px; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg); color: var(--text);
+      font-size: 15px; line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(26,46,74,0.97);
+      backdrop-filter: blur(6px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+    .brand { color: #fff; font-weight: 600; font-size: 15px; letter-spacing: .2px; white-space: nowrap; text-decoration: none; }
+    .brand:hover { text-decoration: none; color: rgba(255,255,255,.85); }
+    .navlinks { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+    .navlinks a { color: rgba(255,255,255,.72); font-size: 13.5px; padding: 6px 11px; border-radius: 6px; }
+    .navlinks a:hover { color: #fff; background: rgba(255,255,255,.12); text-decoration: none; }
+
+    /* PAGE HEADER */
+    .project-header { padding: 44px 0 28px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13.5px; color: var(--muted); margin-bottom: 20px;
+      border: 1px solid var(--border); border-radius: 7px;
+      padding: 6px 12px; background: var(--surface);
+    }
+    .back-link:hover { color: var(--accent); text-decoration: none; background: var(--bg); }
+    .project-title {
+      margin: 0 0 8px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 30px; font-weight: 700; letter-spacing: -.4px;
+      color: var(--navy); line-height: 1.2;
+    }
+    .project-blurb { margin: 0 0 16px; font-size: 15px; color: var(--muted); max-width: 720px; line-height: 1.7; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0; }
+    .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 3px 9px; border-radius: 999px; background: var(--bg); }
+
+    /* THUMBNAIL */
+    .project-thumb {
+      width: 100%; max-height: 420px; object-fit: cover;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      display: block; margin: 28px 0;
+    }
+
+    /* SECTIONS */
+    section { padding: 28px 0; border-top: 1px solid var(--border); }
+    .sec-title {
+      margin: 0 0 14px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 19px; font-weight: 600; color: var(--navy); letter-spacing: -.2px;
+    }
+    .prose { font-size: 14.5px; line-height: 1.8; color: var(--text); }
+    .prose p { margin: 0 0 14px; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* FIGURE GRID */
+    .fig-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
+    @media (max-width: 640px) { .fig-grid { grid-template-columns: 1fr; } }
+    .fig-item img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); display: block; }
+    .fig-caption { font-size: 12.5px; color: var(--muted); margin-top: 6px; text-align: center; }
+
+    /* PUBLICATIONS */
+    .pub-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+    .pub-item {
+      padding: 14px 16px; border: 1px solid var(--border);
+      border-radius: var(--radius); background: var(--bg);
+      font-size: 13.5px; line-height: 1.7;
+    }
+    .pub-title { font-weight: 600; color: var(--navy); font-size: 14px; }
+    .pub-title a { color: var(--navy); }
+    .pub-title a:hover { color: var(--accent); text-decoration: underline; }
+    .pub-authors { color: var(--muted); margin: 2px 0; }
+    .pub-authors strong { color: var(--text); font-weight: 600; }
+    .pub-venue { font-style: italic; color: var(--text); font-size: 13px; }
+    .pub-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      padding: 2px 7px; border-radius: 4px;
+      background: #fef3c7; color: #92400e; margin-left: 6px; vertical-align: middle;
+    }
+
+    footer { padding: 30px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); margin-top: 16px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">Chitralekha Gupta</a>
+      <nav class="navlinks">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#publications">Publications</a>
+        <a href="../index.html#news">News</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="project-header">
+      <a class="back-link" href="../index.html#projects">&#8592; Back to Projects</a>
+      <h1 class="project-title">Scene-to-Audio (SonicVista)</h1>
+      <p class="project-blurb">
+        Distant scene sonification for blind and low-vision users via generative audio compositions.
+      </p>
+      <div class="tags">
+        <span class="tag">Accessibility</span>
+        <span class="tag">Audio AI</span>
+        <span class="tag">Wearables</span>
+      </div>
+    </div>
+
+    <img
+      class="project-thumb"
+      src="scene-to-audio/thumbnail.jpg"
+      alt="Scene-to-Audio (SonicVista) project thumbnail"
+    />
+
+    <!-- OVERVIEW -->
+    <section>
+      <h2 class="sec-title">Problem</h2>
+      <div class="prose">
+        <p>
+          For blind and low-vision (BLV) people, accessing information about distant visual scenes —
+          panoramic landscapes, cityscapes, public squares — remains a significant challenge.
+          Existing assistive technologies such as screen readers and image-description tools typically
+          describe near-field objects or provide text summaries, but they fail to convey the rich
+          spatial, temporal, and atmospheric qualities of a scene the way sighted people experience it.
+        </p>
+        <p>
+          A person standing at the edge of a hilltop, or on a harbour promenade, or in a busy plaza
+          should be able to <em>experience</em> what is in front of them — not just receive a list
+          of detected objects. Text descriptions and speech output are cognitively demanding to process
+          and do not provide an intuitive, immediate sense of space and ambience.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">Our Approach</h2>
+      <div class="prose">
+        <p>
+          We developed <strong>SonicVista</strong> and its generalised successor framework
+          <strong>Scene2Audio</strong>, which convert visual scene images captured from a wearable
+          camera into immersive audio compositions. The system analyses the scene using
+          computer vision to identify objects, their positions, distances, and the overall scene
+          context, then uses generative audio models to synthesise and mix a soundscape that
+          corresponds to the visual content.
+        </p>
+        <p>
+          For example, if the scene shows a coastal vista with seagulls in the distance, crashing
+          waves to the left, and a distant city skyline, the generated audio composition would layer
+          ambient sea sounds, bird calls, and subtle urban ambience — giving the
+          user an intuitive, rich sense of what lies ahead. The approach moves beyond description to
+          <em>experience</em>, leveraging the brain's ability to interpret audio as a
+          natural representation of space.
+        </p>
+        <p>
+          SonicVista was published in ACM IMWUT (2024), and the follow-on Scene2Audio framework
+          demonstrated broader generalisability and was accepted to ACM CHI 2026.
+          An extended abstract presenting early user study results appeared at CHI 2025.
+        </p>
+      </div>
+
+      <div class="fig-grid">
+        <div class="fig-item">
+          <img src="../images/sonicvista.png" alt="SonicVista system overview" />
+          <p class="fig-caption">SonicVista system architecture converting visual scenes to audio</p>
+        </div>
+        <div class="fig-item">
+          <img src="../images/scentoaudio-allstudies.png" alt="Scene-to-Audio user studies overview" />
+          <p class="fig-caption">Overview of user studies conducted for the Scene-to-Audio system</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+      <h2 class="sec-title">Related Publications</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-title">
+            Beyond Descriptions: A Generative Scene2Audio Framework for Blind and Low-Vision Users to Experience Vista Landscapes
+          </div>
+          <div class="pub-authors">
+            <strong>Chitralekha Gupta</strong>, Jing Peng, Ashwin Ram, Shreyas Sridhar,
+            Christophe Jouffrais, Suranga Nanayakkara
+          </div>
+          <div class="pub-venue"><em>ACM CHI 2026</em></div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            <a href="https://dl.acm.org/doi/10.1145/3706599.3719849" target="_blank" rel="noreferrer">
+              Scene-to-Audio: Distant Scene Sonification for Blind and Low Vision People
+            </a>
+          </div>
+          <div class="pub-authors">
+            <strong>Chitralekha Gupta</strong>, Ashwin Ram, Shreyas Sridhar, Christophe Jouffrais, Suranga Nanayakkara
+          </div>
+          <div class="pub-venue"><em>ACM CHI 2025 &mdash; Extended Abstract</em></div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            <a href="https://dl.acm.org/doi/abs/10.1145/3659609" target="_blank" rel="noreferrer">
+              SonicVista: Towards Creating Awareness of Distant Scenes through Sonification
+            </a>
+          </div>
+          <div class="pub-authors">
+            <strong>Chitralekha Gupta</strong>, Shreyas Sridhar, Denys Matthies,
+            Christophe Jouffrais, Suranga Nanayakkara
+          </div>
+          <div class="pub-venue"><em>Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2024</em></div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713438" target="_blank" rel="noreferrer">
+              Human Robot Interaction for Blind and Low Vision People: A Systematic Literature Review
+            </a>
+          </div>
+          <div class="pub-authors">
+            Yize Wei, Nathan Rocher, <strong>Chitralekha Gupta</strong>, Mia Huong Nguyen,
+            Roger Zimmermann, Wei Tsang Ooi, Christophe Jouffrais, Suranga Nanayakkara
+          </div>
+          <div class="pub-venue"><em>ACM CHI 2025</em></div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Chitralekha Gupta &middot; Augmented Human Lab, NUS</span>
+      <span>chitralekha [at] nus.edu.sg</span>
+    </div>
+  </footer>
+
+</body>
+</html>
